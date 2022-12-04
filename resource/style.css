@@ -1,0 +1,106 @@
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"; */
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Zen Dots', cursive;
+    position: fixed;
+    height: 180px;
+    width: 100%;
+    background-color: rgb(15, 14, 14);
+    
+}
+
+#title-search {
+    display: flex; 
+    align-items: center; 
+    border-bottom: 2px solid rgb(39, 38, 38);
+    
+    
+}
+
+#title-search h1{
+    flex: 1;
+    margin-left: 100px;
+    text-align: right;
+    color: rgb(196, 42, 42);
+    
+    font-size: xx-large;
+}
+
+#title-search form {
+    flex: 6;
+    margin-right: 100px;
+}
+
+.input {
+
+    margin-left: 30%;
+    width: 450px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: lightgray;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.input::placeholder {
+    font-size: large;
+}
+
+#search-btn {
+    width: 100px;
+    height: 40px;
+    /* border: 2px solid rgb(121, 121, 121) ; */
+    background-color: rgb(127, 23, 23);
+    border-radius: 38px;
+    color: rgb(255, 255, 255);
+}
+
+
+.toggle {
+    margin-right: 60px;
+    width: 80px;
+    height: 30px;
+    background-color: rgb(255, 242, 242);
+}
+
+
+
+.header-child {
+    display: flex;
+    justify-content: left;
+    padding: 30px;
+    width: 100%;
+    height: 25px;
+    color: white; 
+    font-size: larger;
+}
+
+#unorder {
+    display: flex;
+    margin-left: 200px;
+} 
+
+
+#unorder li {
+    justify-content: l;
+    font-family: 'Righteous', cursive;
+    margin: 0 3px 0 30px;
+    font-weight: bold;
+    list-style: none; 
+    font-family: 'Orbitron', sans-serif;
+}
+
+.fa-solid {
+    margin-top: 13px;
+}
+
