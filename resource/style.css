@@ -5,7 +5,10 @@
 }
 
 body {
+    display: flex;
+    justify-content: space-around;
     font-family: 'Roboto', sans-serif;
+    background: url(./pics/bloodShot.jpg);
 }
 
 header {
@@ -31,7 +34,7 @@ header {
     flex: 1;
     margin-left: 100px;
     text-align: right;
-    color: rgb(196, 42, 42);
+    color: rgb(10, 10, 10);
     
     font-size: xx-large;
 }
@@ -83,6 +86,10 @@ header {
     height: 25px;
     color: white; 
     font-size: larger;
+    background: url(./pics/batman.jpg);
+    
+    
+
 }
 
 #unorder {
@@ -104,3 +111,33 @@ header {
     margin-top: 13px;
 }
 
+/* Style the main body */
+
+main {
+    display: flex;
+    margin: 15% 
+}
+
+.movies {
+    width: 200px;
+    padding: 50px;
+    color: white;
+    
+}
+
+.movies img {
+    width: 100%;
+    margin-bottom: 0;
+}
+.film-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    opacity: .5;
+}
+
+.overview {
+    background-color: black;
+    opacity: .5;
+}
