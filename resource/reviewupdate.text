@@ -1,0 +1,67 @@
+var inputEl = document.querySelector("#movie-input");
+var searchButtonEl = document.querySelector("#search-button");
+var moviePoster = document.querySelector("#movie-poster");
+var descriptionEl = document.querySelector("#description");
+var reviewMovieEl = document.querySelector("#critic-rating");
+var searchMovies = [];
+
+searchButtonEl.addEventListener("click", function(event){
+    event.preventDefault();
+    var movies = inputEl.value.trim();
+    moviePoster.textContent = "";
+    descriptionEl.textContent = "";
+    reviewMovieEl.textContent = "";
+
+    // saveMovies();
+    title(movies);
+    ratings(movies);
+});
+
+function title(movies) {
+    fetch('https://api.themoviedb.org/3/search/movie?api_key=08f00304851866898e77f5deff0d7eba&query=' + movies)
+
+    .then(function(response) {
+        response.json()
+        .then(function(data){
+        console.log(data);
+
+    var movies = inputEl.value.trim();
+    var titleEl = document.createElement("h2");
+    var posterImg = document.createElement("img");
+    var ratingEl = document.createElement("p");
+
+    posterImg.setAttribute("src", "https://image.tmdb.org/t/p/original/" + data.results[0].poster_path);
+    titleEl.textContent = data.results[0].title;
+    descriptionEl.textContent = data.results[0].overview;
+
+    moviePoster.append(titleEl);
+    moviePoster.append(posterImg);
+    reviewMovieEl.appendChild(ratingEl);
+
+        })
+    })
+};
+
+function ratings(movies) {
+    fetch("https://www.omdbapi.com/?t=" + movies + "&apikey=5ce1c19")
+    .then(function(response) {
+        response.json()
+        .then(function(data) {
+            console.log(data);
+
+            var ratingsEl = document.createElement("p");
+            var directorEl = document.createElement("p");
+            var actorsEl = document.createElement("p");
+
+            reviewMovieEl.textContent = "ImdbRating: " + data.imdbRating;
+            ratingsEl.textContent = "Internet Movie Database: " + data.Ratings[0].Value;
+            directorEl.textContent = "Director: " + data.Director + "," + " Writer: " + data.Writer;
+            actorsEl.textContent = " Actors: " + data.Actors;
+
+            reviewMovieEl.appendChild(ratingsEl);
+            reviewMovieEl.appendChild(directorEl);
+            reviewMovieEl.appendChild(actorsEl);
+
+        })
+    })
+};
