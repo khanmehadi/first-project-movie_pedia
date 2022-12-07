@@ -5,123 +5,179 @@
 }
 
 body {
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* position: fixed; */
+    /* justify-content: space-around; */
     font-family: 'Roboto', sans-serif;
     background: url(./pics/bloodShot.jpg);
+    background-repeat: none;
 }
-
+/* base nav design */
 header {
     display: flex;
-    flex-direction: column;
-    font-family: 'Zen Dots', cursive;
-    position: fixed;
+    flex-wrap: wrap;
+    /* position: fixed; */
+    /* align-items: center; */
+    margin: 0;font-family: 'Zen Dots', cursive;
     height: 180px;
-    width: 100%;
-    background-color: rgb(15, 14, 14);
-    
+    width: 100%;   
 }
 
 #title-search {
     display: flex; 
+    /* position: sticky; */
+    width: 100%;
     align-items: center; 
+    justify-content: space-evenly;
     border-bottom: 2px solid rgb(39, 38, 38);
-    
-    
+    margin-bottom: 0;   
 }
 
 #title-search h1{
-    flex: 1;
+    /* text-shadow: 3px 3px 7px rgb(255, 250, 250); */
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     margin-left: 100px;
-    text-align: right;
-    color: rgb(10, 10, 10);
-    
+    /* color: rgb(10, 10, 10); */
     font-size: xx-large;
 }
 
 #title-search form {
-    flex: 6;
+    display: flex;
     margin-right: 100px;
 }
 
 .input {
-
-    margin-left: 30%;
+    margin: 10px;
     width: 450px;
-    height: 45px;
-    border-radius: 30px;
-    background-color: lightgray;
-    opacity: .5;
+    height: 50px;
+    border-radius: 200px 200px 200px 200px;
+    border: 0;
+    opacity: .7;
     cursor: pointer;
+    box-shadow: 0px 0px 0px;
 }
 
 .input::placeholder {
-    font-size: large;
+    font-size: 20px;
+    color: black;
+    
+}
+
+.input:hover {
+    cursor: pointer;
+    background-color: rgb(223, 109, 109);
+    color: white;
+    opacity: .8;
+}
+
+.input:active {
+    opacity: .5;
+    border-color: white;
+
 }
 
 #search-btn {
+    border-radius: 10%;
+    margin: 13px;
     width: 100px;
-    height: 40px;
-    /* border: 2px solid rgb(121, 121, 121) ; */
-    background-color: rgb(127, 23, 23);
-    border-radius: 38px;
-    color: rgb(255, 255, 255);
+    height: 50px;
+    background-color: red;
+    border: solid 3px black;
+    box-shadow: 5px 8px 8px;
 }
 
-
-.toggle {
-    margin-right: 60px;
-    width: 80px;
-    height: 30px;
-    background-color: rgb(255, 242, 242);
+#search-btn:hover {
+    color: white;
+    border-color: white;
+    opacity: 8;
+    cursor: pointer;
 }
 
+#search-btn:active{
+    /* opacity: .6; */
+    color: white;
+    border-color:  black;
+    cursor: pointer;
+    opacity: .8;
+}
 
+#search_btn::placeholder{
+    font-weight: bolder;
+}
 
 .header-child {
     display: flex;
-    justify-content: left;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 30px;
     width: 100%;
     height: 25px;
     color: white; 
     font-size: larger;
-    background: url(./pics/batman.jpg);
-    
-    
-
+    background: url(./pics/batman.jpg); 
 }
 
 #unorder {
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     margin-left: 200px;
 } 
 
-
-#unorder li {
-    justify-content: l;
+#unorder li{
     font-family: 'Righteous', cursive;
-    margin: 0 3px 0 30px;
     font-weight: bold;
     list-style: none; 
     font-family: 'Orbitron', sans-serif;
 }
 
+.nav-btn {
+    width: 130px;
+    height: 60px;
+    background-color: red;
+    border: solid 3px black;
+    box-shadow: 5px 8px 8px;
+    margin: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.nav-btn:active{
+    opacity: .6;
+    color: white;
+}
+
+
 .fa-solid {
     margin-top: 13px;
 }
 
+/* //////////////////////////////////////////////// */
 /* Style the main body */
 
 main {
     display: flex;
-    margin: 15% 
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 .movies {
-    width: 200px;
-    padding: 50px;
+    width: 400px;
+    position: relative;
     color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    box-shadow: 3px 7px 15px 15px rgb(37, 37, 37);
+    margin: 2rem;
+    overflow: hidden;
     
 }
 
@@ -129,15 +185,111 @@ main {
     width: 100%;
     margin-bottom: 0;
 }
+
 .film-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: rgb(255, 245, 245);
     background-color: black;
-    opacity: .5;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.film-info span {
+    background-color: rgb(41, 39, 39);
+    padding: .25rem 0.5rem;
+    height: 25px;
+    text-align: center;
+}
+
+.film-info span.green {
+    color: green;
+}
+
+.film-info span.orange {
+    color: orange;
+}
+
+.film-info span.red {
+    color: red;
 }
 
 .overview {
-    background-color: black;
-    opacity: .5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: .6;
+    max-height: 100%;
+    padding: 1rem;
+    color: rgb(255, 251, 251);
+    transform: translateY(101%); 
+    transition: transform 0.2s ease-in; 
+    display: none;
 }
+
+
+.movies:hover .overview{
+    display: block;
+    transform: translateY(0);
+    background-color: black;
+    opacity: 1;
+    cursor: pointer;
+    /* box-shadow: 2px 2px 2px 2px red; */
+
+}
+
+.btn-overview {
+    background-color: green;
+    border-radius: 10px;
+    height: 35px;
+    width: 100px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.btn-overview:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+/* ////////////////////////Modal///////////////////////// */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    /* opacity: .8;     */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    background-color: gray;
+}
+
+.close {
+    color: rgb(255, 255, 255);
+    float: right;
+    font-size: 60px;
+    font: bolder;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(243, 131, 131);
+  text-decoration: none;
+  cursor: pointer;
+}
+
